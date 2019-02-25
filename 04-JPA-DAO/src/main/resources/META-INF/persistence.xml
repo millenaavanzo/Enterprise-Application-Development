@@ -5,14 +5,12 @@
 		<properties>
 			<property name="hibernate.show_sql" value="true"/>
 			<property name="hibernate.format_sql" value="true" />
-			
 			<!-- 
-			update: alter table/create - não funciona 100% das vezes- 
-			create: drop/create
-			validate: valida se as classes estão de acordo com as tabelas  
+				update: alter table/create
+				create: drop e create
+				validate: valida as classes com as tabelas
 			 -->
 			<property name="hibernate.hbm2ddl.auto" value="update"/>
-			
 			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle12cDialect"/>
 			<property name="javax.persistence.jdbc.user" value="RM81386"/>
 			<property name="javax.persistence.jdbc.password" value="010300"/>

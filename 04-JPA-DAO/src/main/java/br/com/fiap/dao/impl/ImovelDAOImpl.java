@@ -5,6 +5,7 @@ import javax.persistence.EntityManager;
 import br.com.fiap.dao.ImovelDAO;
 import br.com.fiap.entity.Imovel;
 import br.com.fiap.excecao.CommitException;
+import br.com.fiap.excecao.SearchNotFoundException;
 
 public class ImovelDAOImpl implements ImovelDAO {
 
@@ -28,8 +29,11 @@ public class ImovelDAOImpl implements ImovelDAO {
 		em.merge(imovel);
 	}
 
-	public void remover(int codigo) {
+	public void remover(int codigo) throws SearchNotFoundException {
 		Imovel imovel = consultar(codigo);
+		if (imovel==null) {
+			throw new SearchNotFoundException();
+		}
 		em.remove(imovel);
 	}
 
@@ -41,6 +45,7 @@ public class ImovelDAOImpl implements ImovelDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 			em.getTransaction().rollback();
+			
 			throw new CommitException();
 			
 		}

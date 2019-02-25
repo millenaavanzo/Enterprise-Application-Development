@@ -30,12 +30,12 @@ public class Imovel {
 	
 	@Id
 	@Column(name="cd_imovel")
-	@GeneratedValue(generator = "Imovel", strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(generator = "imovel", strategy = GenerationType.SEQUENCE)
 	private int codigo;
 	
 	
 	@Enumerated(EnumType.STRING)
-	@Column(name="cd_imovel")
+	@Column(name="ds_tipo")
 	private Tipo tipo;
 	
 	

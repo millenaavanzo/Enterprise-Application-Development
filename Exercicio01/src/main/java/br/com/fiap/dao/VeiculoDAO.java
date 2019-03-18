@@ -1,7 +1,8 @@
 package br.com.fiap.dao;
 
 import br.com.fiap.entity.Veiculo;
-
+import br.com.fiap.excecao.CommitException;
+import br.com.fiap.excecao.SearchNotFoundException;
 public interface VeiculoDAO {
 
 	
